@@ -18,6 +18,10 @@ public class TableTest {
     @Test
     public void testCSS() {
         wd.findElement(By.cssSelector("#customers tr:nth-child(7) td:last-child"));
+        System.out.println(wd.findElements(By.cssSelector("#customers tr")).size());
+        System.out.println(wd.findElements(By.cssSelector("#customers th")).size());
+        wd.findElement(By.cssSelector("#customers tr:nth-child(3)"));
+        wd.findElement(By.cssSelector("#customers tr:last-child"));
     }
 
     @AfterMethod

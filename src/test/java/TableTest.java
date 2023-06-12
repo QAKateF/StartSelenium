@@ -18,15 +18,24 @@ public class TableTest {
     @Test
     public void testCSS() {
         wd.findElement(By.cssSelector("#customers tr:nth-child(7) td:last-child"));
+        wd.findElement(By.xpath("//table //tr[7] //td[3]"));
+
         System.out.println(wd.findElements(By.cssSelector("#customers tr")).size());
+        System.out.println(wd.findElements(By.xpath("//table[@id='customers'] //tr")).size());
+
         System.out.println(wd.findElements(By.cssSelector("#customers th")).size());
+        System.out.println(wd.findElements(By.xpath("//table[@id='customers'] //th")).size());
+
         wd.findElement(By.cssSelector("#customers tr:nth-child(3)"));
+        wd.findElement(By.xpath("//table[@id='customers'] //tr[3]"));
+
         wd.findElement(By.cssSelector("#customers tr:last-child"));
+        wd.findElement(By.xpath("//table[@id='customers'] //tr[9]"));
     }
 
     @AfterMethod
     public void tearDown() {
-        wd.quit();
+       wd.quit();
     }
 
 

@@ -12,6 +12,7 @@ public class TableTest {
     @BeforeMethod
     public void init(){
         wd = new ChromeDriver();
+        wd.manage().window().maximize();
         wd.navigate().to("https://www.w3schools.com/css/css_table.asp");
     }
 
